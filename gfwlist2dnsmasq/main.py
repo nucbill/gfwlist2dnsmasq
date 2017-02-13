@@ -162,6 +162,7 @@ def main():
     content = decode_gfwlist(content)
     domains = parse_gfwlist(content, user_rule)
     #domains = reduce_domains(domains)
+    #do not need to reduce domains for dnsmasq
     pac_content = generate_dnsmasq_conf(domains, args.dns, dns_port)
     with open(args.output, 'wb') as f:
         f.write(pac_content)
