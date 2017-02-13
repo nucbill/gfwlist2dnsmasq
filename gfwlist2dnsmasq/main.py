@@ -161,7 +161,7 @@ def main():
         dns_port = '53'
     content = decode_gfwlist(content)
     domains = parse_gfwlist(content, user_rule)
-    domains = reduce_domains(domains)
+    #domains = reduce_domains(domains)
     pac_content = generate_dnsmasq_conf(domains, args.dns, dns_port)
     with open(args.output, 'wb') as f:
         f.write(pac_content)
